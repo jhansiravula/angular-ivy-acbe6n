@@ -44,6 +44,22 @@ export class AppComponent {
     ];
     const selectedOptions = ['vodka', 'b', 'c'];
 
-    console.log(cocktailListc.some(item => selectedOptions.includes(item.ingredients)))
+    let check = [];
+
+    selectedOptions.forEach((opt) => {
+      cocktailListc.forEach((cocktail) => {
+        if (
+          cocktail.ingredients.toLowerCase().includes(opt.toLowerCase()) ===
+          true
+        ) {
+          check.push(cocktail);
+        }
+      });
+    });
+
+    if (check.length > 0) {
+      console.log(true);
+      console.log(check);
+    }
   }
 }
