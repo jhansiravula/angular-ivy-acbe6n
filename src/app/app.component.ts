@@ -61,5 +61,13 @@ export class AppComponent {
       console.log(true);
       console.log(check);
     }
+
+    let selectedDrinks = cocktailListc.filter((cocktail, i) => {
+      selectedOptions.reduce(
+        (has, option) => has && cocktail.ingredients.includes(option),
+        true
+      );
+    });
+    console.log('selectedDrinks', selectedDrinks);
   }
 }
